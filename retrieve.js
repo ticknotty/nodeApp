@@ -30,7 +30,7 @@ http.createServer(function(request, response) {
             //Get the documents collection
             var collection = db.collection('users');
             //We have a cursor now with our find criteria
-            var results = collection.find({name: 'modulus user'});
+           // var results = collection.find({name: 'modulus user'});
             //We need to sort by age descending
             results.sort({age: -1});
 
