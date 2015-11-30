@@ -30,7 +30,7 @@ http.createServer(function(request, response) {
             //Get the documents collection
             var collection = db.collection('users');
             //We have a cursor now with our find criteria
-            var results = collection.find({name: 'modulus user'});
+            var results = collection.find({name: 'modulus user', name: 'modulus admin', name: 'modulus super admin'});
 
 
             //Lets iterate on the result
