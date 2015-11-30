@@ -9,7 +9,12 @@ var client = new Twitter({
 client.get('search/tweets', {q: 'lolcat'}, function(error, tweets){
     response.writeHead(200, { 'Content-Type': 'text/plain' });
     client.get('search/tweets', {q: 'lolcats'}, function(error, tweets){
-        response.end(JSON.stringify(tweets));
+        //response.end(JSON.stringify(tweets));
+        var json = [];
+        for (var i =0; i < tweets.statuses.length; i++){
+            json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
+        }
+        response.end(JSON.stringify(json));
     });
 }).listen(port);
 
